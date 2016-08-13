@@ -415,7 +415,7 @@
 				body.appendChild(action);
 				docfrag.appendChild(container);
 				// add the container to the end of body
-				document.getElementsByTagName('body').item(0).appendChild(docfrag);
+				document.getElementsByTagName('dialog').item(0).appendChild(docfrag);
 			}
 		}, {
 			key: '_initTimeDialog',

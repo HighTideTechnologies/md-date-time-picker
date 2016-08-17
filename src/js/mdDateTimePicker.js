@@ -31,7 +31,8 @@ class mdDateTimePicker {
 	*
 	* @return {Object}    																				[mdDateTimePicker]
 	*/
-	constructor({type, init = moment(), past = moment().subtract(21, 'years'), future = init, mode = false, orientation = 'LANDSCAPE', trigger = '', ok = 'ok', cancel = 'cancel', colon = true}) {
+	constructor({ selector = "body", type, init = moment(), past = moment().subtract(21, 'years'), future = init, mode = false, orientation = 'LANDSCAPE', trigger = '', ok = 'ok', cancel = 'cancel', colon = true}) {
+		this._selector = selector
 		this._type = type
 		this._init = init
 		this._past = past
@@ -415,7 +416,7 @@ class mdDateTimePicker {
 		body.appendChild(action)
 		docfrag.appendChild(container)
 		// add the container to the end of body
-		document.getElementsByTagName('body').item(0).appendChild(docfrag)
+		document.getElementsByTagName(this._selector).item(0).appendChild(docfrag)
 	}
 
 	/**
